@@ -184,9 +184,9 @@ public class MyUtils {
                     return dataSource;
                 }
                 DriverManagerDataSource managerDataSource = new DriverManagerDataSource();
-                managerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
+                managerDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
                 managerDataSource.setPassword(properties.getProperty("spring.datasource.password"));
-                String str = "jdbc:mysql://" + properties.getProperty("spring.datasource.url") + "/" + properties.getProperty("spring.datasource.dbname") + "?useUnicode=true&characterEncoding=utf-8&useSSL=false";
+                String str = "jdbc:mysql://" + properties.getProperty("spring.datasource.url") + "/" + properties.getProperty("spring.datasource.dbname") + "?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC";
                 managerDataSource.setUrl(str);
                 managerDataSource.setUsername(properties.getProperty("spring.datasource.username"));
                 dataSource = managerDataSource;
